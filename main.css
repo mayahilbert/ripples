@@ -12,6 +12,10 @@ html {
     background-color: black;
 }
 
+body {
+    padding-bottom: 30%;
+}
+
 .visually-hidden {
     position: absolute;
     left: -10000px;
