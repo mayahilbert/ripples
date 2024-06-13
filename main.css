@@ -2,11 +2,14 @@ body,
 html {
     padding: 0;
     margin: 0;
-    background-color: black;
     color: #919397;
     font-family: "Roboto";
     font-weight: 200;
     font-size: calc(7px + 2vw);
+}
+
+html {
+    background-color: black;
 }
 
 .visually-hidden {
@@ -117,6 +120,7 @@ nav .exhibition-title svg {
 
 .title-graphic svg {
     max-height: 82vh;
+    background-color: black;
 }
 
 .title-graphic .d {
@@ -291,4 +295,17 @@ nav .exhibition-title svg {
         flex-wrap: nowrap
     }
 
+}
+
+#videoBg {
+    margin: 0 auto;
+    width: 50vw;
+    height: auto;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 30%;
+    bottom: 0;
+    z-index: -1;
 }
