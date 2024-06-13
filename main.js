@@ -11,7 +11,7 @@ var projectTitleStatic;
                     setTimeout(() => {
                         $(this).attr("src", projectTitleStatic);
                         projectTitleRippled = 0;
-                    }, 10000);
+                    }, 15000);
                 }
             );
             $("#project-title-ripple").click(
