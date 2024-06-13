@@ -250,7 +250,7 @@ nav .exhibition-title svg {
 
 .project-text {
     flex-wrap: wrap;
-    margin: 1rem 1rem;
+    margin: 3em 1rem;
     display: flex;
     justify-content: center;
     gap: 2em;
@@ -275,6 +275,7 @@ nav .exhibition-title svg {
         transition: 1s;
         display: inherit;
         opacity: 0.65;
+        margin-bottom: 1em;
     }
 
     .mobile-only {
