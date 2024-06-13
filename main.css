@@ -3,4 +3,193 @@ html {
     padding: 0;
     margin: 0;
     background-color: black;
+    color: #919397;
+    font-family: "Roboto";
+    font-weight: 200;
+    font-size: calc(7px + 2vw)
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 200;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+}
+
+nav {
+    margin: 1em 0.5em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a,
+.project-section a {
+    color: #919397;
+}
+
+nav h1 {
+    padding: 0;
+    margin: 0;
+}
+
+nav svg {
+    font-weight: 200;
+    fill: #919397;
+}
+
+nav .exhibition-title svg {
+    max-width: 30vw;
+}
+
+.right-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.right-nav .d {
+    font-size: 32.57px;
+}
+
+@media (min-width: 50em) {
+    nav {
+        margin: 0.5em 0.5em 0em 0.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2em;
+        text-align: right;
+    }
+
+    nav .right-nav {
+        width: 17em;
+        justify-content: flex-end;
+    }
+
+    nav .right-nav svg {
+        width: 90%;
+    }
+
+
+    nav .exhibition-title svg {
+        max-width: calc(2em + 5vw);
+        margin-left: 0.5em;
+    }
+
+    .title-graphic svg {
+        margin-top: -0.4em;
+    }
+
+}
+
+.title-graphic svg {
+    max-height: 82vh;
+}
+
+.title-graphic .d {
+    fill: none;
+    stroke: #919397;
+    stroke-miterlimit: 10;
+}
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 20%;
+}
+
+.project-section h2,
+.project-section h3 {
+    font-size: 0.8rem;
+    padding: 0;
+    margin: 0;
+}
+
+.project-section h3 {
+    text-align: right;
+}
+
+.project-image {
+    max-width: 100%;
+    padding: 0.2em 0;
+}
+
+
+
+@-webkit-keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* project page */
+.project-page-nav .left-nav {
+    padding-bottom: 0.5em;
+}
+
+.project-page-nav .right-nav {
+    gap: 2em;
+}
+
+@media (min-width: 50em) {
+    .project-page-nav {
+        font-size: 0.6rem;
+        margin: 1em 1em;
+    }
+
+    .project-page-nav .right-nav {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+.project-title-ripple {
+    opacity: 0.65;
+}
+
+@media (max-width: 50em) {
+    .project-title-ripple {
+        max-width: 150%;
+    }
 }
