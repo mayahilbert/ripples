@@ -6,7 +6,7 @@ html {
     color: #919397;
     font-family: "Roboto";
     font-weight: 200;
-    font-size: calc(7px + 2vw)
+    font-size: calc(7px + 2vw);
 }
 
 .visually-hidden {
@@ -28,6 +28,15 @@ h6 {
 
 h2 {
     font-weight: 400;
+    font-size: 1em;
+}
+
+p {
+    font-size: clamp(16px, 1.1rem, 27px);
+    font-weight: 300;
+    letter-spacing: 0.015em;
+    line-height: 1.5em;
+    max-width: clamp(45ch, 50em, 90%);
 }
 
 img {
@@ -132,7 +141,7 @@ nav .exhibition-title svg {
 
 .project-image {
     max-width: 100%;
-    padding: 0.2em 0;
+    padding: 0.5rem 0;
 }
 
 
@@ -185,11 +194,98 @@ nav .exhibition-title svg {
 }
 
 .project-title-ripple {
-    opacity: 0.65;
+    display: none;
 }
 
-@media (max-width: 50em) {
+.project-page-inner {
+    margin: 1em;
+}
+
+.project-title-mobile {
+    margin-top: 3em;
+}
+
+.project-title-mobile h1 {
+    font-weight: 400;
+}
+
+.project-title-mobile p {
+    font-weight: 300;
+}
+
+.project-title-mobile h1,
+.project-title-mobile p {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0.3em;
+}
+
+.vid-container {
+    position: relative;
+    padding-bottom: 46.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 2em 0;
+}
+
+.vid-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-text {
+    flex-wrap: wrap;
+    margin: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.project-desc {
+    flex-basis: 160%;
+}
+
+.project-desc,
+.artist-bio {
+    width: 100%;
+}
+
+.artist-bio {
+    display: flex;
+    align-items: flex-end;
+}
+
+@media (min-width: 50em) {
     .project-title-ripple {
-        max-width: 150%;
+        transition: 1s;
+        display: inherit;
+        opacity: 0.65;
     }
+
+    .mobile-only {
+        display: none;
+    }
+
+    .visually-hidden-desktop {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    .vid-container {
+        margin: 0 10%;
+
+    }
+
+    .project-text {
+        flex-wrap: nowrap
+    }
+
 }
