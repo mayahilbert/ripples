@@ -13,7 +13,13 @@
     <link href="main.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="setupVideo()">
+    <video autoplay src="images/load.mp4" id="myVideo">
+      Video not supported
+    </video>
+
+    <div id="main">
+ 
     <video autoplay muted loop id="videoBg">
         <source src="images/raindrop.mp4" type="video/mp4">
     </video>
@@ -566,6 +572,7 @@
             </g>
         </svg>
     </div>
+    
     <section id="proj1" class="project-section">
         <a href="test-project.html">
             <h2>This Planet is Our Home.</h2>
@@ -580,10 +587,13 @@
             <h3>Jingyi Chen</h3>
         </a>
     </section>
+    </div>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"
         integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js"></script>
+
 </body>
 
 </html>
