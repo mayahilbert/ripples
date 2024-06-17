@@ -323,3 +323,24 @@ nav .exhibition-title svg {
     height: 100%;
     object-fit: cover;
 }
+
+.names_container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    font-size: 0.8em;
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px 0;
+}
