@@ -331,9 +331,16 @@ nav .exhibition-title svg {
     font-size: 0.8em;
 }
 
-.column {
+.column-left {
     flex: 1;
-    margin: 10px;
+    margin-left: 0.8em;
+}
+
+.column-right {
+    flex: 1;
+    margin-right: 3em;
+    margin-left: 0px;
+    text-align: right;
 }
 
 ul {
@@ -342,5 +349,10 @@ ul {
 }
 
 li {
-    padding: 8px 0;
+    padding: 10px 0;
 }
+
+li a
+a:hover {
+    color: yellow;
+  }{
