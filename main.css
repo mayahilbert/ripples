@@ -103,8 +103,12 @@ nav a,
     color: var(--light-grey);
 }
 
-
 nav h1 {
+    padding: 0;
+    margin: 0;
+}
+
+#main-content nav h1 {
     padding: 0.4rem 0;
     margin: 0;
 }
