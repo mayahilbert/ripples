@@ -1,19 +1,54 @@
+:root {
+    --light-grey: #919397;
+}
+
 body,
 html {
     padding: 0;
     margin: 0;
-    color: #919397;
+    color: var(--light-grey);
     font-family: "Roboto";
     font-weight: 200;
-    font-size: calc(7px + 2vw);
+    /*font-size: clamp(10px,calc(7px + 2vw),40px);*/
+    font-size: clamp(0.875rem, 0.45rem + 1.36vw, 3rem);
 }
 
 html {
     background-color: black;
 }
 
-body {
+#myVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 9999;
+    opacity: 1;
+    transition: 0.2s;
+}
+
+#main-content {
+    z-index: -1;
+    opacity: 0;
+    display: none;
+}
+
+#main-content.loaded {
     padding-bottom: 30%;
+    display: block;
+    height: auto;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .visually-hidden {
@@ -34,7 +69,7 @@ h6 {
 
 h2 {
     font-weight: 400;
-    font-size: 1em;
+    font-size: 2em;
 }
 
 h3 {
@@ -42,7 +77,7 @@ h3 {
 }
 
 p {
-    font-size: clamp(16px, 1.1rem, 27px);
+    font-size: 0.95rem;
     font-weight: 300;
     letter-spacing: 0.015em;
     line-height: 1.5em;
@@ -65,17 +100,63 @@ a {
 
 nav a,
 .project-section a {
-    color: #919397;
+    color: var(--light-grey);
 }
+
 
 nav h1 {
     padding: 0;
     margin: 0;
 }
 
+
+/* Dropdown Button */
+.dropdown-btn {
+    margin: 1em;
+    background-color: transparent;
+    border: 1px solid var(--light-grey);
+    color: inherit;
+    padding: 0.2rem 2rem;
+    transition: 0.5s;
+    cursor: pointer;
+    font-size: 0.6rem;
+}
+
+.dropdown-btn:hover,
+.dropdown-btn:focus {
+    border: 1px solid white;
+    color: white;
+}
+
+.artist-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.artist-list {
+    display: none;
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.86);
+    padding: 1em;
+    border: 1px solid white;
+    z-index: 9999;
+    font-weight: 300;
+    width: 90%;
+    line-height: 2em;
+}
+
+.artist-list li {
+    padding: 0;
+}
+
+.show {
+    display: block;
+}
+
 nav svg {
     font-weight: 200;
-    fill: #919397;
+    fill: var(--light-grey);
 }
 
 nav .exhibition-title svg {
@@ -91,7 +172,79 @@ nav .exhibition-title svg {
     font-size: 32.57px;
 }
 
+.scroll-indicator {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    z-index: -1;
+    background-color: black;
+}
+
+.scroll-indicator p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.scroll-indicator-arrow {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("images/ripples-arrow-v1.gif");
+}
+
 @media (min-width: 50em) {
+    #videoBg {
+        max-width: 50vw;
+    }
+
+    .scroll-indicator {
+        margin-top: 0;
+    }
+
+    .scroll-indicator p {
+        font-size: 0.5rem;
+        max-width: 9.5em;
+    }
+
+    .dropdown-btn {
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .artist-list {
+        border: 0;
+        display: block;
+        position: absolute;
+        left: 1rem;
+        text-align: left;
+        font-size: 0.6rem;
+        z-index: 990;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        margin-top: -1.4rem;
+    }
+
+    .artist-list li {
+        transition: 0.4s;
+        opacity: 0.5;
+    }
+
+    .artist-list li.artist-hovered {
+        color: white;
+        opacity: 1;
+        letter-spacing: 0.05em;
+
+    }
+
     nav {
         margin: 0.5em 0.5em 0em 0.5em;
         display: flex;
@@ -110,6 +263,9 @@ nav .exhibition-title svg {
         width: 90%;
     }
 
+    nav h1 {
+        text-align: left;
+    }
 
     nav .exhibition-title svg {
         max-width: calc(2em + 5vw);
@@ -117,31 +273,61 @@ nav .exhibition-title svg {
     }
 
     .title-graphic svg {
-        margin-top: -0.4em;
+        margin-top: -4rem;
+        z-index: 999;
+    }
+
+    .scroll-indicator {
+        display: block;
+        width: auto;
+        position: absolute;
+        right: 0;
+        top: 40%;
     }
 
 }
 
+.title-graphic {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+
+}
+
 .title-graphic svg {
-    max-height: 82vh;
-    background-color: black;
+    max-height: 90vh;
+    background: radial-gradient(black 10%, transparent);
 }
 
 .title-graphic .d {
     fill: none;
-    stroke: #919397;
+    stroke: var(--light-grey);
     stroke-miterlimit: 10;
+    transition: 0.2s;
+}
+
+.title-graphic a:hover path,
+.title-graphic .artist-hovered {
+    stroke: white;
+    stroke-width: 2px;
+    filter: brightness(1.3);
 }
 
 .project-section {
     display: flex;
     flex-direction: column;
-    margin: 4rem 20%;
+    margin: 4rem 10%;
+}
+
+.project-section:hover .project-image {
+    filter: brightness(1.2);
+    opacity: 1;
 }
 
 .project-section h2,
 .project-section h3 {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     padding: 0;
     margin: 0;
 }
@@ -152,7 +338,7 @@ nav .exhibition-title svg {
 
 .project-image {
     max-width: 100%;
-    padding: 0.5rem 0;
+    margin: 0.5rem 0;
 }
 
 
@@ -193,14 +379,28 @@ nav .exhibition-title svg {
 }
 
 @media (min-width: 50em) {
+
+    .title-graphic svg {
+        max-width: 60%;
+    }
+
     .project-page-nav {
-        font-size: 0.6rem;
+        font-size: 0.76rem;
         margin: 1em 1em;
     }
 
     .project-page-nav .right-nav {
         width: 100%;
         justify-content: flex-end;
+    }
+
+    .project-section {
+        margin: 4rem 20%;
+    }
+
+    .project-image {
+        transition: 2s;
+        opacity: 0.7;
     }
 }
 
@@ -271,6 +471,7 @@ nav .exhibition-title svg {
 }
 
 @media (min-width: 50em) {
+
     .project-title-ripple {
         transition: 1s;
         display: inherit;
@@ -304,7 +505,7 @@ nav .exhibition-title svg {
 
 #videoBg {
     margin: 0 auto;
-    width: 50vw;
+    width: 100vw;
     height: auto;
     object-fit: cover;
     position: fixed;
@@ -317,12 +518,6 @@ nav .exhibition-title svg {
 
 
 
-
-#myVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 .names_container {
     display: flex;
@@ -351,8 +546,3 @@ ul {
 li {
     padding: 10px 0;
 }
-
-li a
-a:hover {
-    color: yellow;
-  }{
