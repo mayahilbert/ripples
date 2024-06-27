@@ -273,7 +273,7 @@ nav .exhibition-title svg {
     }
 
     .title-graphic svg {
-        margin-top: -0.4em;
+        margin-top: -4rem;
         z-index: 999;
     }
 
@@ -471,9 +471,6 @@ nav .exhibition-title svg {
 }
 
 @media (min-width: 50em) {
-    .title-graphic svg {
-        margin-top: -2.5rem;
-    }
 
     .project-title-ripple {
         transition: 1s;
