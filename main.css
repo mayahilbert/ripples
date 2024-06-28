@@ -126,6 +126,10 @@ nav h1 {
     font-size: 0.6rem;
 }
 
+.dropdown-btn h2 {
+    pointer-events: none;
+}
+
 .dropdown-btn:hover,
 .dropdown-btn:focus {
     border: 1px solid white;
@@ -304,7 +308,7 @@ nav .exhibition-title svg {
 
 .title-graphic svg {
     max-height: 90vh;
-    background: radial-gradient(black 10%, transparent);
+    background: radial-gradient(black 50%, transparent);
 }
 
 .title-graphic .d {

@@ -90,7 +90,7 @@ $(function () {
     function () {
       $("#artist-10").toggleClass("artist-hovered")
     });
-  $("#otherBlob").hover(
+  $("#thinkBlob").hover(
     function () {
       $("#artist-11").toggleClass("artist-hovered")
     });
@@ -148,7 +148,7 @@ $(function () {
     });
   $("#artist-11").hover(
     function () {
-      $("#otherBlob").toggleClass("artist-hovered")
+      $("#thinkBlob").toggleClass("artist-hovered")
     });
   $("#artist-12").hover(
     function () {
