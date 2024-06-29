@@ -120,13 +120,15 @@ nav h1 {
     background-color: transparent;
     border: 1px solid var(--light-grey);
     color: inherit;
-    padding: 0.2rem 2rem;
+    padding: 0em 7%;
     transition: 0.5s;
     cursor: pointer;
-    font-size: 0.6rem;
+    text-transform: uppercase;
 }
 
 .dropdown-btn h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
     pointer-events: none;
 }
 
@@ -392,7 +394,11 @@ nav .exhibition-title svg {
 }
 
 .project-page-nav .right-nav {
-    gap: 2em;
+    gap: 1.2em;
+}
+
+.project-page-nav {
+    font-size: 1.5rem;
 }
 
 @media (min-width: 50em) {
