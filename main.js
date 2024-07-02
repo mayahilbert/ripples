@@ -162,23 +162,25 @@ $(function () {
     function () {
       $("#psBlob").toggleClass("artist-hovered")
     });
-
-  $("#project-title-ripple").hover(
-    function () {
-      if (projectTitleRippled == 0) {
-        $(this).attr("src", projectTitleGif);
-        projectTitleRippled++;
-      }
-      setTimeout(() => {
-        $(this).attr("src", projectTitleStatic);
-        projectTitleRippled = 0;
-      }, 15000);
+  function rippleTitleGif(title) {
+    if (projectTitleRippled == 0) {
+      $(title).attr("src", projectTitleGif);
+      projectTitleRippled++;
     }
+    setTimeout(() => {
+      $(title).attr("src", projectTitleStatic);
+      projectTitleRippled = 0;
+    }, 15000);
+  }
+  $("#project-title-ripple").hover(function () {
+    rippleTitleGif(this);
+  }
   );
   $("#project-title-ripple").click(
     function () {
       $(this).attr("src", projectTitleStatic);
       projectTitleRippled = 0;
+      rippleTitleGif(this)
     }
   );
 });
