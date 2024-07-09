@@ -43,6 +43,7 @@ window.onclick = function (event) {
 
 
 var projectTitleRippled = 0;
+var projectTitleRippleReset = 0;
 var projectTitleGif;
 var projectTitleStatic;
 $(function () {
@@ -162,25 +163,37 @@ $(function () {
     function () {
       $("#psBlob").toggleClass("artist-hovered")
     });
+
   function rippleTitleGif(title) {
     if (projectTitleRippled == 0) {
       $(title).attr("src", projectTitleGif);
       projectTitleRippled++;
+      setTimeout(() => {
+        $(title).attr("src", projectTitleStatic); projectTitleRippleReset++;
+        console.log("ripple timeout reset");
+      }, 10100);
     }
-    setTimeout(() => {
-      $(title).attr("src", projectTitleStatic);
-      projectTitleRippled = 0;
-    }, 15000);
   }
-  $("#project-title-ripple").hover(function () {
-    rippleTitleGif(this);
-  }
+  $("#project-title-ripple").hover(
+    function () {
+      rippleTitleGif(this);
+    }
   );
   $("#project-title-ripple").click(
     function () {
-      $(this).attr("src", projectTitleStatic);
-      projectTitleRippled = 0;
-      rippleTitleGif(this)
+      if (projectTitleRippleReset == 1) {
+        projectTitleRippled = 0;
+        projectTitleRippleReset = 0;
+        rippleTitleGif(this);
+      }
     }
   );
+
+  var unmuteBtn = document.getElementById("unmute");
+
+  $("#unmute").click(function () {
+    var player = new Vimeo.Player($("#sacred-video")[0]);
+    player.setMuted(false);
+    unmuteBtn.style.display = "none";
+  });
 });
