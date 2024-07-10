@@ -756,6 +756,12 @@ figure.image-container figcaption p {
         width: 105vw;
     }
 
+    img.project-title-ripple-nityasya {
+        width: 130vw;
+        max-width: 150%;
+
+    }
+
     .project-page-inner {
         overflow: hidden;
     }
