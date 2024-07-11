@@ -10,16 +10,17 @@ document.addEventListener('DOMContentLoaded', e => {
   var video = document.getElementById("myVideo");
   var main = document.getElementById("main-content");
 
-  //video.addEventListener('ended', e => {
-  setTimeout(() => {
-
-    video.style.opacity = "0";
+  if (video != null) {
+    //video.addEventListener('ended', e => {
     setTimeout(() => {
-      video.style.display = "none";
-    }, 250);
-    main.classList.add("loaded");
-  }, 1250);
 
+      video.style.opacity = "0";
+      setTimeout(() => {
+        video.style.display = "none";
+      }, 250);
+      main.classList.add("loaded");
+    }, 1250);
+  }
   //});
 });
 
@@ -169,9 +170,10 @@ $(function () {
       $(title).attr("src", projectTitleGif);
       projectTitleRippled++;
       setTimeout(() => {
-        $(title).attr("src", projectTitleStatic); projectTitleRippleReset++;
+        $(title).attr("src", projectTitleStatic);
+        projectTitleRippleReset++;
         console.log("ripple timeout reset");
-      }, 10100);
+      }, 11000);
     }
   }
   $("#project-title-ripple").hover(

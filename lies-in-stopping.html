@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lies in Stopping - ripples</title>
+  <title>Lies in stopping - ripples</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -14,7 +14,7 @@
 
 
   <link rel="preload" as="image" href="images/ripples-Yuehan-animation-v3.gif">
-
+  <link rel="preload" as="image" href="images/lies-in-stopping/01-still.jpg">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         </h1>
       </a></div>
     <div class="right-nav">
-      <a href="#">curatorial statement</a>
+      <a href="curatorial-statement.html">curatorial statement</a>
       <a href="https://newmediartspace.info">new media artspace</a>
     </div>
   </nav>
@@ -33,8 +33,13 @@
 
     <section class="project-info">
       <img id="project-title-ripple" class="project-title-ripple" src="images/ripples-Yuehan-animation-v3.jpg">
+      <!--<div class="project-title-still">
+        <h1>Lies in stopping</h1>
+        <p>Yuehan Hao</p>
+      </div>-->
+
       <div class="project-title-mobile mobile-only visually-hidden-desktop">
-        <h1>Lies in Stopping</h1>
+        <h1>Lies in stopping</h1>
         <p>Yuehan Hao</p>
       </div>
     </section>
@@ -43,62 +48,67 @@
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 15</div>
-          <img src="images/lies-in-stopping/01.gif">
+          <video autoplay loop muted playsinline poster="images/lies-in-stopping/01-still.jpg">
+            <source src="images/lies-in-stopping/01-vid.webm" type="video/webm">
+            <source src="images/lies-in-stopping/01-vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!--<img src="images/lies-in-stopping/01.gif">-->
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">2 / 15</div>
-          <img src="images/lies-in-stopping/02_1.png">
+          <img src="images/lies-in-stopping/02_1.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">3 / 15</div>
-          <img src="images/lies-in-stopping/02_2.png">
+          <img src="images/lies-in-stopping/02_2.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">4 / 15</div>
-          <img src="images/lies-in-stopping/02_3.png">
+          <img src="images/lies-in-stopping/02_3.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">5 / 15</div>
-          <img src="images/lies-in-stopping/02_4.png">
+          <img src="images/lies-in-stopping/02_4.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">6 / 15</div>
-          <img src="images/lies-in-stopping/02_5.png">
+          <img src="images/lies-in-stopping/02_5.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">7 / 15</div>
-          <img src="images/lies-in-stopping/02_6.png">
+          <img src="images/lies-in-stopping/02_6.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">8 / 15</div>
-          <img src="images/lies-in-stopping/02_7.png">
+          <img src="images/lies-in-stopping/02_7.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">9 / 15</div>
-          <img src="images/lies-in-stopping/02_8.png">
+          <img src="images/lies-in-stopping/02_8.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">10 / 15</div>
-          <img src="images/lies-in-stopping/02_9.png">
+          <img src="images/lies-in-stopping/02_9.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">11 / 15</div>
-          <img src="images/lies-in-stopping/02_10.png">
+          <img src="images/lies-in-stopping/02_10.webp">
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">12 / 15</div>
-          <img src="images/lies-in-stopping/02_11.png">
+          <img src="images/lies-in-stopping/02_11.webp">
         </div>
 
         <div class="mySlides fade">
@@ -107,40 +117,30 @@
         </div>
 
         <div class="mySlides fade">
-          <div class="numbertext">14 / 15</div>
-          <img src="images/lies-in-stopping/03.gif">
+          <div class="numbertext">14 / 15</div><video autoplay loop muted playsinline
+            poster="images/lies-in-stopping/04.webp">
+            <source src="images/lies-in-stopping/03.webm" type="video/webm">
+            <source src="images/lies-in-stopping/03.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!--<img src="images/lies-in-stopping/03.gif">-->
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">15 / 15</div>
-          <img src="images/lies-in-stopping/04.jpg">
+          <img src="images/lies-in-stopping/04.webp">
         </div>
 
 
 
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
+        <a class="next loop" onclick="plusSlides(1)">
+          <p class="loop-text">start over</p>❯
+        </a>
 
       </div>
       <br>
-
-      <!--<div style="text-align:center">
-                  <span class="dot" onclick="currentSlide(1)"></span> 
-                  <span class="dot" onclick="currentSlide(2)"></span> 
-                  <span class="dot" onclick="currentSlide(3)"></span> 
-                  <span class="dot" onclick="currentSlide(4)"></span> 
-                  <span class="dot" onclick="currentSlide(5)"></span> 
-                  <span class="dot" onclick="currentSlide(6)"></span> 
-                  <span class="dot" onclick="currentSlide(7)"></span> 
-                  <span class="dot" onclick="currentSlide(8)"></span> 
-                  <span class="dot" onclick="currentSlide(9)"></span> 
-                  <span class="dot" onclick="currentSlide(10)"></span> 
-                  <span class="dot" onclick="currentSlide(11)"></span> 
-                  <span class="dot" onclick="currentSlide(12)"></span> 
-                  <span class="dot" onclick="currentSlide(13)"></span> 
-                  <span class="dot" onclick="currentSlide(14)"></span> 
-                  <span class="dot" onclick="currentSlide(15)"></span> 
-                </div>-->
     </section>
     <section class="project-text">
       <div class="project-desc">
@@ -185,7 +185,7 @@
       </div>
     </section>
     <div class="back-to-home">
-      <a href="/">
+      <a href="index.html">
         <div class="back-arrow"></div><span class="back-to-home-text">Back</span>
       </a>
     </div>
@@ -199,6 +199,9 @@
   </script>
   <script>
     var prevArrow = document.getElementsByClassName('prev');
+    var nextArrow = document.getElementsByClassName('next');
+    var loopArrow = document.getElementsByClassName('loop');
+
     let slideIndex = 1;
     showSlides(slideIndex);
 
@@ -219,7 +222,13 @@
         slides[i].style.display = "none";
       }
       slides[slideIndex - 1].style.display = "block";
-      if (slideIndex == 1) { prevArrow[0].style.display = "none"; } else { prevArrow[0].style.display = "block"; }
+      if (slideIndex == 1) {
+        prevArrow[0].style.display = "none";
+        loopArrow[0].style.display = "none";
+      } else {
+        prevArrow[0].style.display = "block";
+      }
+      if (slideIndex == slides.length) { nextArrow[0].style.display = "none"; loopArrow[0].style.display = "block"; } else { nextArrow[0].style.display = "block"; loopArrow[0].style.display = "none"; }
 
     }
   </script>

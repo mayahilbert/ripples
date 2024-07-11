@@ -7,7 +7,7 @@ html {
     padding: 0;
     margin: 0;
     color: var(--light-grey);
-    font-family: "Roboto";
+    font-family: "Roboto", "Roboto Light", "Arial", "Helvetica", sans-serif;
     font-weight: 200;
     /*font-size: clamp(10px,calc(7px + 2vw),40px);*/
     font-size: clamp(17px, 0.45rem + 1.36vw, 3rem);
@@ -158,7 +158,8 @@ figcaption {
     max-width: clamp(45ch, 50em, 90%);
 }
 
-img {
+img,
+video {
     max-width: 100%;
 }
 
@@ -756,7 +757,7 @@ figure.image-container figcaption p {
         width: 105vw;
     }
 
-    img.project-title-ripple-nityasya {
+    img.project-title-ripple-long {
         width: 130vw;
         max-width: 150%;
 
@@ -829,26 +830,25 @@ li {
     padding: 10px 0;
 }
 
+
 .mySlides {
     display: none;
 }
 
-.mySlides img {
+.mySlides img,
+.mySlides video {
     max-height: 100vh;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-body:has(.slideshow-container) {
-    scroll-snap-type: y mandatory;
-    overflow: scroll;
-    height: 100vh;
+    object-fit: contain;
 }
 
 .project-work:has(> .slideshow-container) {
-    scroll-snap-align: start;
-    width: 100%;
+    margin: 0 -1em;
 }
 
 img {
@@ -861,6 +861,7 @@ img {
     position: relative;
     margin: auto;
     background-color: white;
+
 }
 
 /* Next & previous buttons */
@@ -868,13 +869,12 @@ img {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: calc(50% - 5vw - 18px);
     width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: rgba(0, 0, 0, 0.4);
+    padding: 5vw;
+    color: rgba(0, 0, 0, 0.6);
     font-weight: normal;
-    font-size: 0.6em;
+    font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -891,15 +891,16 @@ img {
     color: black;
 }
 
-/* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
+.loop-text {
+    rotate: 270deg;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.6rem;
+    margin: 0;
     position: absolute;
-    bottom: 8px;
     width: 100%;
-    text-align: center;
+    right: 1.2em;
+    top: calc(50% - 2em);
 }
 
 /* Number text (1/3 etc) */
@@ -909,32 +910,19 @@ img {
     padding: 8px 12px;
     position: absolute;
     top: -3em;
-    right: 0;
+    right: 3em;
     font-weight: 400;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
+.active {
     background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
     animation-name: fade;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 
 .center {
@@ -954,13 +942,27 @@ img {
     }
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 50em) {
 
     .prev,
-    .next,
-    .text {
-        font-size: 11px
+    .next {
+        bottom: 0;
+        top: auto;
+        margin-bottom: calc(-40px - 6vw);
+        color: var(--light-grey);
+    }
+
+    .prev:hover,
+    .next:hover {
+        color: white;
+    }
+
+    .loop-text {
+        rotate: none;
+        width: 150%;
+        right: 3em;
+        top: 38%;
+        font-size: 0.8rem;
     }
 }
 
@@ -1004,13 +1006,13 @@ img {
 .back-to-home {
     position: relative;
     margin-block-start: 3em;
-
+    width: fit-content;
 }
 
 .back-to-home-text {
     position: absolute;
     bottom: 30%;
-    right: calc(30% + 30vw);
+    left: 40%;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1019,7 +1021,6 @@ img {
 
 @media (min-width: 50em) {
     .back-to-home-text {
-        left: 7%;
         bottom: 40%;
         font-size: 0.6rem;
     }
