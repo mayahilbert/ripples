@@ -1064,3 +1064,8 @@ img {
 .curatorial-text {
     max-width: 30em;
 }
+
+p.curatorial-team {
+    font-size: 0.6rem;
+    max-width: 30em;
+}
